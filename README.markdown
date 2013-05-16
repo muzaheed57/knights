@@ -23,7 +23,6 @@ From there, you can issue commands to that character.
 The game will pause when in _command mode_, initiated by selecting a character.
 You can also pause the game manually with the space key.
 Pretting `ctrl c` at any time will cancel the current command and place you back in _normal mode_, unfrozen.
-Pressing `e` instead of a character's key will select everyone.
 
 ### Commands
 
@@ -54,14 +53,14 @@ There are several styles of targeting, with different commands.
 
  * Party targeting: some commands must be applied to the party.
    These commands are targeted by pressing the key associated with a character,
-	the same way as selecting the character.
+   the same way as selecting the character.
  * Enemy targeting: when a command needs an enemy, letters will appear above visible enemies.
    If there are a lot of enemies, two-letter combinations might be used.
  * Inventory targeting: commands that interact with the inventory will make a list of stored items visible,
    which will be tagged with letters in the same way as enemies.
  * Task targeting: commands that interact with a character's task list have access to the following selectors:
    `n` and `l` refer to the next and last tasks in the list. Either of those numbers prefixed with an integer
-	refers to, for example, the 3rd last or 4th next task.
+   refers to, for example, the 3rd last or 4th next task.
  * Positioning: where commands need a position, relative directions `l`, `r`, `f` and `b` are used.
    They can be modified by either a `c` or an `f` in front of them, for close and far respetively.
 
