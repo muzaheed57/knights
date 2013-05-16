@@ -45,8 +45,8 @@ There are several styles of targeting, with different commands.
 
 In addition, some special selectors are commonly available:
 
- * E: Everyone
- * S: Self
+ * `E`: Everyone
+ * `S`: Self
 
 In the case of a command applied to everyone, the command will be repeated once for each target in a queue, starting with the closest target.
 
@@ -54,21 +54,21 @@ In the case of a command applied to everyone, the command will be repeated once 
 
 Basic instructions in _command mode_ are:
 
- * m: Move. The character will take up a position in the given region.
- * a: Attack once. Selected character attacks the target using whatever weapon is equipped.
- * e: Engage. Selected character engages the target until one of them is dead.
- * h: Heal (or help). Selected charater gives the target whatever medical attention they can.
- * g: Glance. Selected character glances in a direction.
- * l: Loot. Search a corpse or container for any objects.
+ * `m`: Move. The character will take up a position in the given region.
+ * `a`: Attack once. Selected character attacks the target using whatever weapon is equipped.
+ * `e`: Engage. Selected character engages the target until one of them is dead.
+ * `h`: Heal (or help). Selected charater gives the target whatever medical attention they can.
+ * `g`: Glance. Selected character glances in a direction.
+ * `l`: Loot. Search a corpse or container for any objects.
 
 In addition, there are more advanced commands:
 
- * ,: And. Allows you to select multiple characters.
- * ;: Then. Allows you to queue another command for the same character.
- * c: Cancel. Cancels a specific task.
- * .: Repeat. Perform the last command again.
- * w: Wield. Select a piece of equipment from the character's inventory.
- * u: Use. Choose a special ability for the character to use.
- * x: Hide. The character will take cover behind/within a specified obstacle.
- * v: Evade! The character will dodge.
+ * `,`: And. Allows you to select multiple characters.
+ * `;`: Then. Allows you to queue another command for the same character.
+ * `c`: Cancel. Cancels a specific task.
+ * `.`: Repeat. Perform the last command again.
+ * `w`: Wield. Select a piece of equipment from the character's inventory.
+ * `u`: Use. Choose a special ability for the character to use.
+ * `x`: Hide. The character will take cover behind/within a specified obstacle.
+ * `v`: Evade! The character will dodge.
 
