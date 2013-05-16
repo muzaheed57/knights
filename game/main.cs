@@ -25,7 +25,7 @@ exec("./playGui.gui");
 GlobalActionMap.bind("keyboard", "escape", "quit");
 
 //-----------------------------------------------------------------------------
-// The knights
+// The knights.
 
 datablock PlayerData(Knight) {
    shapeFile = "./knight.dts";
@@ -35,6 +35,24 @@ singleton Material(KnightMaterial) {
    diffuseColor[0] = "1 0 0";
    mapTo = "PlayerTexture";
 };
+
+new ActionMap(KnightSelectMap);
+
+function Knight::onAdd(%this, %knight) {
+   if(%knight.selectKey !$= "") {
+      KnightSelectMap.bindCmd("keyboard", %knight.selectKey, "selectKnight(" @ %knight @ ");");
+   }
+}
+
+function Knight::onRemove(%this, %knight) {
+   if(%knight.selectKey !$= "") {
+      KnightSelectMap.unbind("keyboard", %knight.selectKey);
+   }
+}
+
+function selectKnight(%knight) {
+   echo("Knight selected:" SPC %knight.name);
+}
 
 //-----------------------------------------------------------------------------
 // Client and camera.
@@ -51,6 +69,7 @@ function GameConnection::onEnterGame(%client) {
    GameGroup.add(TheCamera);
    Canvas.setContent(PlayGui);
    activateDirectInput();
+   KnightSelectMap.push();
 }
 
 //-----------------------------------------------------------------------------
@@ -77,18 +96,27 @@ function onStart() {
          ambient = "0.1 0.1 0.1";
          castShadows = true;
       };
+
       new SimGroup(Knights) {
          new AIPlayer(SerQuentin) {
             datablock = Knight;
             position = "-3 5 1";
+            selectKey = "q";
          };
          new AIPlayer(SerJordan) {
             datablock = Knight;
-            position = "0 5 1";
+            position = "-1 5 1";
+            selectKey = "j";
          };
          new AIPlayer(SerVermare) {
             datablock = Knight;
+            position = "1 5 1";
+            selectKey = "v";
+         };
+         new AIPlayer(SerOrton) {
+            datablock = Knight;
             position = "3 5 1";
+            selectKey = "o";
          };
       };
    };
@@ -98,5 +126,6 @@ function onExit() {
    GameGroup.delete();
    ServerConnection.delete();
    ServerGroup.delete();
+   KnightSelectMap.delete();
    deleteDataBlocks();
 }
