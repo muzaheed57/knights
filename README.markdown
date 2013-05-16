@@ -32,7 +32,6 @@ Basic instructions in _command mode_ are:
  * `a`: Attack once. Selected character attacks the target using whatever weapon is equipped.
  * `e`: Engage. Selected character engages the target until one of them is dead.
  * `h`: Heal (or help). Selected charater gives the target whatever medical attention they can.
- * `g`: Glance. Selected character glances in a direction.
  * `l`: Loot. Search a corpse or container for any objects.
 
 In addition, there are more advanced commands:
